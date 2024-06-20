@@ -4,7 +4,8 @@ on:
   push:
     branches:
       - '**'
-
+env:
+  cache-version: v1
 jobs:
   setup:
     runs-on: ubuntu-latest
@@ -26,9 +27,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ steps.npm-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
+          key: ${{ env.cache-version }}-${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-npm-
+            ${{ env.cache-version }}-${{ runner.os }}-npm-
 
       - run: npm ci
 
@@ -50,9 +51,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ needs.setup.outputs.npm-cache-dir-path }}
-          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
+          key: ${{ env.cache-version }}-${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-npm-
+            ${{ env.cache-version }}-${{ runner.os }}-npm-
 
       - run: npm ci
       - run: npm run prettier
@@ -78,9 +79,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ needs.setup.outputs.npm-cache-dir-path }}
-          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
+          key: ${{ env.cache-version }}-${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-npm-
+            ${{ env.cache-version }}-${{ runner.os }}-npm-
 
       - run: npm ci
       - name: Build
