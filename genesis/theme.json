@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "styles": {
+    "elements": {
+      "link": {
+        "typography": {
+          "textDecoration": false
+        }
+      }
+    }
+  },
+  "templateParts": [
+    {
+      "area": "header",
+      "name": "header",
+      "title": "ヘッダー"
+    },
+    {
+      "area": "footer",
+      "name": "footer",
+      "title": "フッター"
+    }
+  ],
+  "customTemplates": [
+    {
+      "name": "page-home",
+      "title": "トップページ用テンプレート",
+      "postTypes": ["page"]
+    }
+  ]
+}

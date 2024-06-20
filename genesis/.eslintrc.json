@@ -1,0 +1,61 @@
+{
+  "env": {
+    "browser": true,
+    "es2022": true,
+    "node": true
+  },
+  "extends": [
+    "standard",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "semi": [2, "never"],
+    "indent": [
+      "off",
+      2,
+      {
+        "SwitchCase": 1,
+        "offsetTernaryExpressions": true
+      }
+    ],
+    // Storybook、Jestで使用するファイルはdevDependenciesのimportを許可
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.stories.*",
+          "**/*.spec.*",
+          "**/*.test.*",
+          "vitest-env.ts",
+          "vitest.config.ts",
+          "vite-storybook.config.ts"
+        ],
+        "optionalDependencies": false
+      }
+    ],
+    // オブジェクトスプレッド記法を許可
+    "react/jsx-props-no-spreading": ["off"],
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": {
+          "attributes": false
+        }
+      }
+    ],
+    "@typescript-eslint/no-unsafe-member-access": "warn"
+  },
+  "ignorePatterns": [".eslintrc.*"]
+}

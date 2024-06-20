@@ -1,0 +1,239 @@
+@use 'assets/scss/global/' as *;
+
+/* リセット：フォーム ========== */
+form {
+  margin-block: 0;
+  margin-inline: 0;
+  padding-block: 0;
+  padding-inline: 0;
+}
+
+fieldset {
+  border: none;
+  margin-block: 0;
+  margin-inline: 0;
+  padding-block: 0;
+  padding-inline: 0;
+}
+
+legend {
+  margin-block: 0;
+  margin-inline: 0;
+  padding-block: 0;
+  padding-inline: 0;
+}
+
+optgroup {
+  font-weight: $font-bold;
+}
+
+label {
+  cursor: pointer;
+  display: block;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  box-sizing: border-box;
+  color: $color-font-base;
+  font-family: $font-main;
+  font-weight: $font-medium;
+  line-height: 1.6;
+  margin-block: 0;
+  margin-inline: 0;
+  outline: 0;
+
+  @include mxGetFontSize(16);
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: none;
+  padding-block: 0;
+  padding-inline: 0;
+}
+
+input[type='text'],
+input[type='tel'],
+input[type='email'],
+input[type='date'],
+input[type='month'],
+input[type='search'],
+input[type='password'],
+input[type='reset'],
+input[type='number'] {
+  appearance: none;
+  line-height: 1.6;
+
+  @include mxGetFontSize(16);
+}
+
+input:focus {
+  outline: 0;
+}
+
+input:disabled {
+  cursor: not-allowed;
+}
+
+input[type='file']:disabled {
+  cursor: not-allowed;
+}
+
+input[readonly] {
+  pointer-events: none;
+
+  @include mxMediaHover {
+    &:hover {
+      pointer-events: none;
+    }
+  }
+}
+
+input[type='number'] {
+  appearance: textfield;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  appearance: none;
+  block-size: auto;
+  margin-block: 0;
+  margin-inline: 0;
+}
+
+input[type='button'],
+input[type='submit'] {
+  cursor: pointer;
+}
+
+input[type='button']:disabled,
+input[type='submit']:disabled {
+  cursor: not-allowed;
+}
+
+button,
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: not-allowed;
+}
+
+select {
+  appearance: none;
+  cursor: pointer;
+  line-height: 1.6;
+}
+
+select:focus {
+  outline: 0;
+}
+
+select:disabled {
+  cursor: not-allowed;
+}
+
+select[readonly] {
+  pointer-events: none;
+
+  @include mxMediaHover {
+    &:hover {
+      pointer-events: none;
+    }
+  }
+}
+
+textarea {
+  appearance: none;
+  // stylelint-disable-next-line property-no-unknown
+  field-sizing: content;
+  line-height: 1.6;
+  resize: vertical;
+
+  @include mxGetFontSize(16);
+}
+
+textarea:focus {
+  outline: 0;
+}
+
+textarea:disabled {
+  cursor: not-allowed;
+}
+
+textarea[readonly] {
+  pointer-events: none;
+
+  @include mxMediaHover {
+    &:hover {
+      pointer-events: none;
+    }
+  }
+}
+
+/* stylelint-disable */
+:placeholder {
+  color: $color-font-placeholder;
+}
+
+::placeholder {
+  color: $color-font-placeholder;
+}
+
+:input-placeholder {
+  color: $color-font-placeholder;
+}
+
+::input-placeholder {
+  color: $color-font-placeholder;
+}
+
+input:placeholder,
+textarea:placeholder {
+  color: $color-font-placeholder;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: $color-font-placeholder;
+}
+
+input:input-placeholder,
+textarea:input-placeholder {
+  color: $color-font-placeholder;
+}
+
+input::input-placeholder,
+textarea::input-placeholder {
+  color: $color-font-placeholder;
+}
+
+input:focus:placeholder,
+textarea:focus:placeholder {
+  color: transparent;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: transparent;
+}
+
+input:focus:input-placeholder,
+textarea:focus:input-placeholder {
+  color: transparent;
+}
+
+input:focus::input-placeholder,
+textarea:focus::input-placeholder {
+  color: transparent;
+}
+/* stylelint-enable */
