@@ -1,1 +1,1 @@
-# wp-theme-genesis
+# WP Theme Genesis
