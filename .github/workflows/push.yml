@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - '**'
-      - '!develop'
-      - '!main'
 
 jobs:
   setup:
@@ -46,7 +44,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: '18.x'
+          node-version: '21.x'
 
       - name: Cache dependencies
         uses: actions/cache@v2
@@ -74,7 +72,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: '18.x'
+          node-version: '21.x'
 
       - name: Cache dependencies
         uses: actions/cache@v2
