@@ -9,6 +9,9 @@ env:
 jobs:
   setup:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: genesis
     outputs:
       npm-cache-dir-path: ${{ steps.npm-cache-dir-path.outputs.dir }}
     steps:
