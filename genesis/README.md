@@ -1,4 +1,4 @@
-# WP Theme Genesis
+# WP Theme GENESiS
 
 ## Development
 
