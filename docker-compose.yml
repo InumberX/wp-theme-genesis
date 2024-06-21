@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - '8000:80'
+    volumes:
+      - ./plugins:/var/www/html/wp-content/plugins
+      # Themes are here
+      - ./genesis:/var/www/html/wp-content/themes/genesis
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    depends_on:
+      - db
+  db:
+    image: mariadb:latest
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+volumes:
+  db_data: {}

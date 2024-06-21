@@ -1,0 +1,269 @@
+@use 'assets/scss/global/' as *;
+
+/* リセット ========== */
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+html {
+  background: $color-background-body;
+  block-size: 100%;
+  color: $color-font-base;
+  inline-size: 100%;
+  line-height: 1;
+}
+
+body {
+  background-attachment: fixed;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-block: 0;
+  border-inline: 0;
+  font-family: $font-main;
+  font-weight: $font-medium;
+  inline-size: 100%;
+  line-height: 1.6;
+  margin-block: 0;
+  margin-inline: 0;
+  overflow: clip auto;
+  padding-block: 0;
+  padding-inline: 0;
+  // stylelint-disable-next-line property-no-vendor-prefix
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* stylelint-disable */
+article,
+aside,
+details,
+figcaption,
+include,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary,
+figure {
+  display: block;
+  margin-block: 0;
+  margin-inline: 0;
+  padding-block: 0;
+  padding-inline: 0;
+}
+/* stylelint-enable */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd,
+p,
+blockquote,
+ul,
+ol,
+li {
+  margin-block: 0;
+  margin-inline: 0;
+  -webkit-overflow-wrap: break-word;
+  overflow-wrap: break-word;
+  padding-block: 0;
+  padding-inline: 0;
+  vertical-align: baseline;
+  -webkit-word-wrap: break-word;
+  word-wrap: break-word;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+figcaption,
+span {
+  -webkit-overflow-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-word-wrap: break-word;
+  word-wrap: break-word;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+audio:not([controls]) {
+  block-size: 0;
+  display: none;
+}
+
+[hidden]:not([hidden='until-found']),
+template {
+  display: none;
+}
+
+a {
+  color: $color-font-link;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    0.3s color,
+    0.3s opacity,
+    0.3s background-color,
+    0.3s border-color;
+
+  &:link,
+  &:visited {
+    color: $color-font-link-visited;
+    text-decoration: none;
+  }
+
+  @include mxMediaHover {
+    &:hover,
+    &:active {
+      color: $color-font-link-hover;
+      text-decoration: underline;
+    }
+  }
+}
+
+button {
+  cursor: pointer;
+  font-family: $font-main;
+  font-weight: $font-medium;
+}
+
+abbr[title] {
+  border-block-end: 1px dotted;
+}
+
+i,
+em,
+address {
+  font-style: normal;
+}
+
+b,
+strong,
+em {
+  font-weight: $font-bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background-color: $color-background-mark;
+  color: $color-font-mark;
+}
+
+small {
+  font-size: 100%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  inset-block-start: -0.5em;
+}
+
+sub {
+  inset-block-end: -0.25em;
+}
+
+img {
+  block-size: auto;
+  border-block: none;
+  border-inline: none;
+  // stylelint-disable-next-line property-no-unknown
+  interpolation-mode: bicubic;
+  max-inline-size: 100%;
+  vertical-align: top;
+}
+
+svg {
+  overflow: hidden;
+}
+
+hr {
+  block-size: 0;
+  box-sizing: content-box;
+}
+
+pre {
+  overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: $font-main;
+  margin-block: 0;
+  margin-inline: 0;
+  padding-block: 0;
+  padding-inline: 0;
+
+  @include mxGetFontSize(10);
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding-block: 0;
+  padding-inline: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd,
+p,
+blockquote,
+ul,
+ol,
+li {
+  font-size: get-clamp-rem(14, 16);
+}
+
+[role='tabpanel']:target {
+  display: revert;
+}
+
+// stylelint-disable-next-line scss/at-rule-no-unknown
+@view-transition {
+  // stylelint-disable-next-line property-no-unknown
+  navigation: auto;
+}

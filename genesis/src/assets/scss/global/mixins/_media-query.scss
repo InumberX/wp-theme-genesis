@@ -1,0 +1,92 @@
+@use '../variables' as *;
+
+// Media Query
+@mixin mxMediaQueryXs() {
+  @media screen and (width >= $breakpoint-xs), print {
+    @content;
+  }
+}
+
+@mixin mxMediaQuerySm() {
+  @media screen and (width >= $breakpoint-sm), print {
+    @content;
+  }
+}
+
+@mixin mxMediaQueryMd() {
+  @media screen and (width >= $breakpoint-md), print {
+    @content;
+  }
+}
+
+@mixin mxMediaQueryLg() {
+  @media screen and (width >= $breakpoint-lg), print {
+    @content;
+  }
+}
+
+@mixin mxMediaQueryXl() {
+  @media screen and (width >= $breakpoint-xl), print {
+    @content;
+  }
+}
+
+@mixin mxMediaQueryXxl() {
+  @media screen and (width >= $breakpoint-xxl), print {
+    @content;
+  }
+}
+
+@mixin mxMediaQueryReverseXs() {
+  @media screen and (width <= calc($breakpoint-xs - 1px)) {
+    @content;
+  }
+}
+
+@mixin mxMediaQueryReverseSm() {
+  @media screen and (width <= calc($breakpoint-sm - 1px)) {
+    @content;
+  }
+}
+
+@mixin mxMediaQueryReverseMd() {
+  @media screen and (width <= calc($breakpoint-md - 1px)) {
+    @content;
+  }
+}
+
+@mixin mxMediaQueryReverseLg() {
+  @media screen and (width <= calc($breakpoint-lg - 1px)) {
+    @content;
+  }
+}
+
+@mixin mxMediaQueryReverseXl() {
+  @media screen and (width <= calc($breakpoint-xl - 1px)) {
+    @content;
+  }
+}
+
+@mixin mxMediaQueryReverseXxl() {
+  @media screen and (width <= calc($breakpoint-xxl - 1px)) {
+    @content;
+  }
+}
+
+@mixin mxMediaQueryPrint() {
+  @media print {
+    @content;
+  }
+}
+
+@mixin mxMediaHover() {
+  @media (any-hover: hover) {
+    @content;
+  }
+}
+
+@mixin mxMediaNotScripting() {
+  @media (scripting: none) {
+    @content;
+  }
+}

@@ -1,0 +1,31 @@
+@charset "utf-8";
+@use 'sass:meta';
+@layer reset, componentUiLow, componentUiMiddle, componentUiHigh, componentCommon, componentPage, utils;
+
+@layer reset {
+  @include meta.load-css('assets/scss/reset');
+}
+
+@layer componentUiLow {
+  @include meta.load-css('assets/scss/components/ui/low');
+}
+
+@layer componentUiMiddle {
+  @include meta.load-css('assets/scss/components/ui/middle');
+}
+
+@layer componentUiHigh {
+  @include meta.load-css('assets/scss/components/ui/high');
+}
+
+@layer componentCommon {
+  @include meta.load-css('assets/scss/components/common');
+}
+
+@layer componentPage {
+  @include meta.load-css('assets/scss/components/pages');
+}
+
+@layer utils {
+  @include meta.load-css('assets/scss/utils');
+}

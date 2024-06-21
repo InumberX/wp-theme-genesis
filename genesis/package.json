@@ -1,0 +1,47 @@
+{
+  "name": "genesis",
+  "private": true,
+  "scripts": {
+    "build": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src/",
+    "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src/",
+    "lint:quiet": "eslint --quiet --ext .js,.jsx,.ts,.tsx ./src/",
+    "stylelint": "stylelint 'src/**/*.{css,scss,sass}'",
+    "stylelint:fix": "stylelint --fix 'src/**/*.{css,scss,sass}'",
+    "prettier": "prettier --check 'src/**/*.{js,jsx,ts,tsx}'",
+    "prettier:fix": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
+    "typecheck": "tsc -b",
+    "copy-files": "node copy-files.js"
+  },
+  "browserslist": [
+    "last 1 Chrome versions",
+    "last 1 Edge versions",
+    "last 1 Firefox versions",
+    "last 1 Safari versions",
+    "last 1 iOS versions",
+    "last 1 ChromeAndroid versions"
+  ],
+  "devDependencies": {
+    "@types/jquery": "^3.5.29",
+    "@types/node": "^20.11.30",
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
+    "esbuild": "^0.20.2",
+    "esbuild-plugin-sass": "^1.0.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "fast-glob": "^3.3.2",
+    "prettier": "^3.2.5",
+    "sass": "^1.72.0",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard-scss": "^13.0.0",
+    "stylelint-order": "^6.0.4",
+    "stylelint-scss": "^6.2.1",
+    "typescript": "^5.4.3"
+  }
+}
