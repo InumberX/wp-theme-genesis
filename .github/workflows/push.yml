@@ -21,7 +21,7 @@ jobs:
 
       - name: Get npm cache directory path
         id: npm-cache-dir-path
-        run: echo "dir=$(npm cache dir)" >> $GITHUB_OUTPUT
+        run: echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT
 
       - name: Cache dependencies
         uses: actions/cache@v2
