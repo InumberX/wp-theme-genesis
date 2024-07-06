@@ -36,6 +36,6 @@ docker-compose down
 
 ## Themes
 
-### Genesis Theme
+### GENESiS Theme
 
 - [README](./genesis)
