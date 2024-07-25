@@ -22,6 +22,13 @@ function add_scripts()
     date('YmdHis', filemtime(get_theme_file_path('assets/css/common.css')))
   );
 
+  wp_enqueue_style(
+    $style_name . '-customize',
+    get_stylesheet_directory_uri() . '/customize.css',
+    array($style_name . '-common'),
+    date('YmdHis', filemtime(get_theme_file_path('customize.css')))
+  );
+
   wp_enqueue_script(
     $script_name . '-jquery',
     get_stylesheet_directory_uri() . '/assets/js/lib/jquery.min.js',
@@ -34,6 +41,13 @@ function add_scripts()
     get_stylesheet_directory_uri() . '/assets/js/common.js',
     array($script_name . '-jquery'),
     date('YmdHis', filemtime(get_theme_file_path('assets/js/common.js')))
+  );
+
+  wp_enqueue_script(
+    $script_name . '-customize',
+    get_stylesheet_directory_uri() . '/customize.js',
+    array($script_name . '-common'),
+    date('YmdHis', filemtime(get_theme_file_path('customize.js')))
   );
 }
 
