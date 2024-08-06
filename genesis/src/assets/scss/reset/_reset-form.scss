@@ -24,7 +24,7 @@ legend {
 }
 
 optgroup {
-  font-weight: $font-bold;
+  font-weight: var(--font-bold);
 }
 
 label {
@@ -38,9 +38,9 @@ optgroup,
 select,
 textarea {
   box-sizing: border-box;
-  color: $color-font-base;
-  font-family: $font-main;
-  font-weight: $font-medium;
+  color: var(--color-font-base);
+  font-family: var(--font-main);
+  font-weight: var(--font-medium);
   line-height: 1.6;
   margin-block: 0;
   margin-inline: 0;
@@ -182,39 +182,39 @@ textarea[readonly] {
 
 /* stylelint-disable */
 :placeholder {
-  color: $color-font-placeholder;
+  color: var(--color-font-placeholder);
 }
 
 ::placeholder {
-  color: $color-font-placeholder;
+  color: var(--color-font-placeholder);
 }
 
 :input-placeholder {
-  color: $color-font-placeholder;
+  color: var(--color-font-placeholder);
 }
 
 ::input-placeholder {
-  color: $color-font-placeholder;
+  color: var(--color-font-placeholder);
 }
 
 input:placeholder,
 textarea:placeholder {
-  color: $color-font-placeholder;
+  color: var(--color-font-placeholder);
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: $color-font-placeholder;
+  color: var(--color-font-placeholder);
 }
 
 input:input-placeholder,
 textarea:input-placeholder {
-  color: $color-font-placeholder;
+  color: var(--color-font-placeholder);
 }
 
 input::input-placeholder,
 textarea::input-placeholder {
-  color: $color-font-placeholder;
+  color: var(--color-font-placeholder);
 }
 
 input:focus:placeholder,

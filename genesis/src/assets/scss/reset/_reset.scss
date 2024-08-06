@@ -1,5 +1,72 @@
 @use 'assets/scss/global/' as *;
 
+/* stylelint-disable scss/double-slash-comment-empty-line-before */
+:root {
+  // Fonts
+  --leading-trim: calc((1em - 1lh) / 2);
+  // Family
+  // Default
+  --font-main: '游ゴシック Medium', 'Yu Gothic', yugothic, yugothicmedium,
+    'Hiragino Kaku Gothic ProN', meiryo, sans-serif;
+  // Size
+  --font-size: $font-size;
+  // Weight
+  // --font-thin: 100;
+  // --font-extra-light: 200;
+  // --font-light: 300;
+  // --font-regular: 400;
+  --font-medium: 500;
+  // --font-semi-bold: 600;
+  --font-bold: 700;
+  // --font-extra-bold: 800;
+  // --font-black: 900;
+
+  // Z Index
+  // Modal
+  --z-index-modal-1: 20000;
+  // Header
+  --z-index-header-1: 10000;
+  --z-index-header-2: 10100;
+  --z-index-header-3: 10200;
+  --z-index-header-4: 10300;
+  // Footer
+  --z-index-footer-1: 8000;
+
+  // Scale
+  --scale-hover: 1.2;
+
+  // Opacity
+  --opacity-hover: 0.6;
+  --opacity-disabled: 0.4;
+
+  // Layouts
+  // コンテンツの最大幅
+  --layout-inner-max-width: 1376px;
+  --layout-inner-max-width-medium: 1064px;
+
+  // コンテンツのpadding
+  --layout-inner-padding-xs: 4vi;
+  --layout-inner-padding-sm: 4.6vi;
+  --layout-inner-padding-md: 32px;
+
+  // Colors
+  // Please provide the URL you are referring to, so I can understand the context and assist you better.
+  // https://chir.ag/projects/name-that-color/
+
+  // Font color
+  --color-font-base: #2f3a3a;
+  --color-font-link: #0071ea;
+  --color-font-link-visited: #0071ea;
+  --color-font-link-hover: #5ba6f6;
+  --color-font-mark: #2f3a3a;
+  --color-font-placeholder: #c2c0bf;
+
+  // Background color
+  --color-background-body: #fff;
+  --color-background-mark: #ffc107;
+}
+/* stylelint-enable */
+
 /* リセット ========== */
 * {
   box-sizing: border-box;
@@ -11,9 +78,9 @@
 }
 
 html {
-  background: $color-background-body;
+  background: var(--color-background-body);
   block-size: 100%;
-  color: $color-font-base;
+  color: var(--color-font-base);
   inline-size: 100%;
   line-height: 1;
 }
@@ -25,8 +92,8 @@ body {
   background-size: cover;
   border-block: 0;
   border-inline: 0;
-  font-family: $font-main;
-  font-weight: $font-medium;
+  font-family: var(--font-main);
+  font-weight: var(--font-medium);
   inline-size: 100%;
   line-height: 1.6;
   margin-block: 0;
@@ -118,7 +185,7 @@ template {
 }
 
 a {
-  color: $color-font-link;
+  color: var(--color-font-link);
   cursor: pointer;
   text-decoration: none;
   transition:
@@ -129,14 +196,14 @@ a {
 
   &:link,
   &:visited {
-    color: $color-font-link-visited;
+    color: var(--color-font-link-visited);
     text-decoration: none;
   }
 
   @include mxMediaHover {
     &:hover,
     &:active {
-      color: $color-font-link-hover;
+      color: var(--color-font-link-hover);
       text-decoration: underline;
     }
   }
@@ -144,8 +211,8 @@ a {
 
 button {
   cursor: pointer;
-  font-family: $font-main;
-  font-weight: $font-medium;
+  font-family: var(--font-main);
+  font-weight: var(--font-medium);
 }
 
 abbr[title] {
@@ -161,7 +228,7 @@ address {
 b,
 strong,
 em {
-  font-weight: $font-bold;
+  font-weight: var(--font-bold);
 }
 
 dfn {
@@ -169,8 +236,8 @@ dfn {
 }
 
 mark {
-  background-color: $color-background-mark;
-  color: $color-font-mark;
+  background-color: var(--color-background-mark);
+  color: var(--color-font-mark);
 }
 
 small {
@@ -220,7 +287,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: $font-main;
+  font-family: var(--font-main);
   margin-block: 0;
   margin-inline: 0;
   padding-block: 0;
