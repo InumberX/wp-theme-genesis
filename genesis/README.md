@@ -14,6 +14,12 @@ npm install
 npm run build
 ```
 
+### Copy release files
+
+```shell
+npm run copy-files
+```
+
 ### Watch SCSS and TypeScript
 
 ```shell
@@ -54,4 +60,19 @@ npm run stylelint
 
 ```shell
 npm run stylelint:fix
+```
+
+### Upgrading packages
+
+#### Check
+
+```shell
+npx npm-check-updates
+```
+
+#### Upgrade
+
+```shell
+npx npm-check-updates -u
+npm install
 ```

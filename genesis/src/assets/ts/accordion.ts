@@ -168,7 +168,13 @@ const init = () => {
       function () {
         const self = this as HTMLAnchorElement
 
-        isAccordionOpened(self) ? hide(self) : show(self)
+        if (isAccordionOpened(self)) {
+          hide(self)
+
+          return false
+        }
+
+        show(self)
 
         return false
       },
