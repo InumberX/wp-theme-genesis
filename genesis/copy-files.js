@@ -10,12 +10,28 @@ const sourceList = [
   './functions.php',
   './screenshot.png',
   './style.css',
-  './customize.css',
-  './customize.js',
   './theme.json',
 ]
 
 const targetFolder = './dist'
+
+// Function to delete all files and folders inside a directory
+function clearDirectory(directory) {
+  if (fs.existsSync(directory)) {
+    fs.readdirSync(directory).forEach((file) => {
+      const currentPath = path.join(directory, file)
+      if (fs.lstatSync(currentPath).isDirectory()) {
+        // Recursively delete folder contents
+        clearDirectory(currentPath)
+        // Remove the empty folder
+        fs.rmdirSync(currentPath)
+      } else {
+        // Delete the file
+        fs.unlinkSync(currentPath)
+      }
+    })
+  }
+}
 
 function copyFileSync(source, target) {
   let targetFile = target
@@ -56,6 +72,9 @@ function copyFolderRecursiveSync(source, target) {
 // Create target folder if it doesn't exist
 if (!fs.existsSync(targetFolder)) {
   fs.mkdirSync(targetFolder)
+} else {
+  // Clear the contents of the target folder
+  clearDirectory(targetFolder)
 }
 
 sourceList.forEach((source) => {
