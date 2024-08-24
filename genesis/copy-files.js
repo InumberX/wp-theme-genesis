@@ -10,6 +10,8 @@ const sourceList = [
   './functions.php',
   './screenshot.png',
   './style.css',
+  './customize.css',
+  './customize.js',
   './theme.json',
 ]
 
