@@ -15,19 +15,19 @@ jobs:
     outputs:
       npm-cache-dir-path: ${{ steps.npm-cache-dir-path.outputs.dir }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7
 
       - name: Setup Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v7
         with:
-          node-version: '21.x'
+          node-version: '24.x'
 
       - name: Get npm cache directory path
         id: npm-cache-dir-path
         run: echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT
 
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v6
         with:
           path: ${{ steps.npm-cache-dir-path.outputs.dir }}
           key: ${{ env.cache-version }}-${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
@@ -43,15 +43,15 @@ jobs:
       run:
         working-directory: genesis
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7
 
       - name: Setup Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v7
         with:
-          node-version: '21.x'
+          node-version: '24.x'
 
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v6
         with:
           path: ${{ needs.setup.outputs.npm-cache-dir-path }}
           key: ${{ env.cache-version }}-${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
@@ -71,15 +71,15 @@ jobs:
       run:
         working-directory: genesis
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7
 
       - name: Setup Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v7
         with:
-          node-version: '21.x'
+          node-version: '24.x'
 
       - name: Cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v6
         with:
           path: ${{ needs.setup.outputs.npm-cache-dir-path }}
           key: ${{ env.cache-version }}-${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
